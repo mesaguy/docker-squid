@@ -6,6 +6,8 @@ FROM alpine:$ALPINE_VERSION
 
 ENV SQUID_CONFIG_FILE /etc/squid/squid.conf
 
+# Install squid
+# hadolint ignore=DL3018
 RUN apk add --no-cache squid && \
     mkdir -p /var/run/squid && \
     # Setup certificate generation
